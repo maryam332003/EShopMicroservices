@@ -17,13 +17,13 @@ namespace BuildingBlocks.CQRS;
 // ICommand ICommandHandler
 
 //this is a marker interface for command handlers that do not return a value
-internal interface ICommandHandler<in TCommand>
-    : ICommandHandler<TCommand, Unit>
+public interface ICommandHandler<in TCommand>
+    : IRequestHandler<TCommand, Unit>
     where TCommand : ICommand<Unit>
 {
 }
 
-internal interface ICommandHandler<in TCommand,TResponse>
+public interface ICommandHandler<in TCommand,TResponse>
     :IRequestHandler<TCommand,TResponse>
     where TCommand : ICommand<TResponse>
     where TResponse : notnull
