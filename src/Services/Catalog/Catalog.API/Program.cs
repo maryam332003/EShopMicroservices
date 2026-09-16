@@ -1,6 +1,5 @@
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddCarter();
-builder.Services.AddCarter();
 
 builder.Services.AddMediatR(config=>
 {
